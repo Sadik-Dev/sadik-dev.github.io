@@ -1,0 +1,140 @@
+.header{
+    height: 35vh;
+}
+.pageTitle{
+    color: white;
+    margin: auto;
+    font-size: 4em;
+}
+.cardP ul{
+    margin: 2% 0 5% 0;
+    line-height: 1.2em;
+}
+.cardP li{
+    margin-top: 5%;
+}
+
+.promo{
+    flex-wrap: wrap;
+    height: auto;
+    margin-bottom: 5%;
+    padding-top: 5%;
+    justify-content: space-around;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cardP{
+    flex-direction: column;
+    width: 45%;
+    margin-bottom: 5%;
+    background: #f4f4f4;
+    background: linear-gradient(146deg, #FFFFFF 0%,#FFFFFF 100%);  
+    height: 630px;
+    padding: 0px;
+    box-shadow: -1px 5px 9px 6px #00000014;
+
+    color: black;
+}
+.cardP a {
+    border: 2px solid white;
+    width: fit-content;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    margin: auto auto 30px 30px;
+}
+.promo .cardP:nth-child(2){
+    background-image: linear-gradient(315deg, #0C0B07 0%, #0C0B07 74%);
+    color: white;
+}
+.promo .cardP:nth-child(2) a{
+    color: white;
+    border: 2px solid white;
+
+}
+.promo .cardP:nth-child(2) a:hover{
+
+    color: black;
+
+}
+.content
+{
+    height: auto;
+}
+.cardP img{
+    width: 100%;
+   margin: 40px auto auto auto;
+    border-radius: 0px;
+    height: auto;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    margin: auto auto auto 0;
+    font-size: 1.2em;
+    padding: 30px;
+
+}
+.col a {
+    margin-top: 15%;
+    color: black;
+    border: 2px solid black;
+}
+.filterHead{
+    width: 90%;
+    margin: auto;
+    margin-top: 3%;
+}
+.lineBreak{
+    height: 2px;
+    width: 100%;
+    background: #f4f4f4;
+    margin: 5px auto 0% auto;
+}
+.filterHead .row{
+    display: flex;
+    
+}
+.filter{
+    display: flex;
+    margin-right: 3%;
+    color: #6e6d7a;
+
+}
+.filter:hover{
+    cursor: pointer;
+}
+.filter p:nth-child(1){
+    margin-right: 5%;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+.filter p:nth-child(2){
+    margin-right: 8%;
+    font-weight: 300;
+    font-size: 1.1em;
+}
+
+.noprojects{
+    box-shadow: none;
+    margin: auto;
+}
+.noprojects .col{
+    margin: auto;
+}
+.noprojects h3, .noprojects h2{
+    margin: auto;
+    margin-top: 5%;
+}
+.noprojects h3{
+    font-weight: 400;
+}
+.noprojects img{
+    width: 50%;
+}
+
+@media (max-width: 700px){
+    .cardP {
+        width: 90%;
+    }
+}

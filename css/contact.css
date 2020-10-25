@@ -1,0 +1,301 @@
+.pageHead{
+    height: 30vh;
+    background: initial;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5% 0 5% 0;
+}
+body{
+    background: rgb(134,180,86);
+    background: linear-gradient(146deg, #4DC26B 0%, rgba(184,230,140,1) 100%);
+}
+.pageHead p{
+    margin-top: 2%;
+}
+.contactImg{
+    width: 600px;
+    margin: auto 2% auto 2%;
+
+}
+.pageContent{
+    height: 100vh;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    padding-top: 2%;
+}
+li a:link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+li a:visited{
+    color: rgb(255, 255, 255); 
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+.formc, .contacti{
+    width: 40%;
+    margin: 0;
+
+}
+#formTitle{
+    width: 80%;
+    text-align: left;
+    font-size: 2em;
+    font-weight: 600;
+    margin-top: 2%;
+    color: #2E353A;
+    margin: auto auto auto 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto ;
+}
+
+form input, form textarea, form select{
+    margin-top: 10%;
+    border: none;
+    border-bottom: 2px solid #d6a6a498;
+    background: #e9e9e800;
+    color: black;
+        resize: none;
+        padding: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.contacti{
+    display: flex;
+    flex-direction: column;
+}
+.celement{
+    background: #f4f4f4;
+    width: 50%;
+    margin: 0;
+    color: black;
+    padding: 20px;
+}
+.celement:nth-child(3){
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.ehead{
+    display: flex;
+    flex-direction: row;
+}
+.ehead p{
+    font-weight: 600;
+}
+.ehead img {
+    width: auto;
+    height: 35px;
+    margin: auto 16px auto 0;
+}
+.celement > p{
+    margin: auto 0 2% 45px;
+
+}
+input::placeholder{
+
+}
+form input, form select{
+    height: 40px;
+}
+
+form button{
+    margin-top: 10%;
+    border-radius: 5px;
+    background: #D6A6A4;
+    border: 0px;
+    width: 50%;
+    color: white;
+    padding: 7px;
+    border: 3px solid #D6A6A4;
+    border-radius: 100px;
+    font-size: 1em;
+    font-weight: 400;
+    font-family: inherit;
+    box-shadow: 0px 0px 20px 0px #00000021;
+}
+.formImg{
+    width: 40%;
+    margin: 0;
+}
+
+form button:hover{
+    background: rgba(255, 255, 255, 0);
+    border: 3px solid #D6A6A4;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    color: #D6A6A4;
+
+}
+
+form textarea{
+    padding-top: 5%;
+}
+
+.wavebot{
+    position: absolute;
+    z-index: -100;
+    bottom: 0;
+    right: 0;
+    opacity: 0.9;
+    width: 800px;
+}
+
+.markP{
+    width: 300px;
+   
+    margin: 0 auto 0 auto;
+}
+
+#contactT{
+    font-size: 1.8em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ffffffe8;
+    width: 90%;
+    text-align: center;
+    line-height: 1.5em;
+    margin: auto;
+}
+.pageHead a {
+    margin: auto;
+}
+
+.credit{
+   margin-bottom: 10%;
+}
+.credit a{
+    color: black;
+}
+.credit img{
+    width: 80%;
+    margin-top: 5%;
+}
+
+
+@media (max-width: 1366px){
+    .markP {
+        width: 220px;
+        }
+
+    .wavebot {
+      
+        width: 500px;
+    }
+
+    .contactImg {
+        width: 500px;
+    }
+
+    form {
+       
+        
+    }
+}
+
+@media (max-width: 1024px){
+
+    .contactImg {
+        width: 400px;
+    }
+    .wavebot {
+      
+        width: 400px;
+    }
+   
+}
+
+@media (max-width: 900px){
+    .contactImg {
+        width: 350px;
+    }
+
+    .pageContent {
+       
+       flex-direction: column;
+        height: auto;
+    }
+    .contacti{
+        width: 100%;
+        margin: auto;
+        margin-top: 20%;
+
+    }
+    .celement{
+        margin: auto;
+    }
+    .formc{
+        width: 100%;
+        margin-top: 10%;
+    margin-bottom: 10%;
+    margin: 0;
+    }
+    #formTitle, form{
+        margin: auto;
+    }
+    .formImg{
+        margin: auto
+    }
+
+}
+
+@media (max-width: 768px){
+    .contactImg {
+        width: 300px;
+    }
+    .celement{
+        margin: auto;
+        width: 80%;
+    }
+    form {
+       
+        width: 80%;
+        
+    }
+    .content{
+        padding: 10% 0 10% 0;
+    }
+
+}
+
+@media (max-width: 500px){
+
+    .pageContent{
+        flex-direction: column;
+    }
+    .contactImg {
+        width: 300px;
+        margin: 15% auto 0 auto;
+    }
+    .pageContent {
+        flex-direction: column;
+        height: auto;
+    }
+    form {
+       
+        width: 90%;
+        margin-bottom: 10%;
+    }
+}
+
+@media (max-width: 320px){
+    .markP {
+        width: 150px;
+    }
+
+    .contactImg {
+        width: 250px;
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/pages.css" rel="stylesheet">
+    <link href="css/contact.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" 
+      type="image/png" 
+      href="/img/favicon.png">
+    <meta name = "description" content = "Discover my online portfolio #SadikDev">
+    <meta name = "keywords" content = "Freelance, Web Developer, .Net, Frontend UX Developer">
+    <meta name = "author" content = "Oussama Sadik">
+    <link rel="icon" 
+      type="image/png" 
+      href="https://img.icons8.com/fluent-systems-filled/24/000000/monitor.png">
+    <title>Sadik Dev | Contact</title>
+</head>
+<body>
+    <section class="header">
+        <div class="head  animate fadeInDown">
+            <div id="line1" class="line"></div>
+            <h3>Sadik Dev.</h3>
+            <div class="menu">
+                <p>Menu</p>
+                <div class="menuTab">
+                   <a href="/index.html">  <p class="current">Home</p></a> 
+                   <a href="/projects.html"><p>Projects</p></a> 
+                   <a href="/contact.html"><p>Contact</p> </a> 
+                </div>
+                <div class="doubleLine">
+                    <div class="line">
+
+                    </div>
+                    <div class="line">
+
+                    </div>
+                </div>
+            </div>
+            <div  id="line2" class="line"></div>
+        </div>
+        
+        <h1 class="pageTitle">Contact</h1>
+      
+        
+       
+    </section>
+    <section class="content">
+        <img class="formImg" src="images/Notebook-bro.png">
+          <div class="formc">
+           
+  
+            <form id="contact-form">
+                <p id="formTitle">
+                    Drop a line
+                </p>
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" name="Email" required placeholder="Email">
+                <input type="number" id="telefoon" name="Phone" required placeholder="Phone">
+  
+                <textarea name="message" required rows="10" cols="30" placeholder="Your Message"></textarea>
+                    <button type="button"  onclick="sendMail()" >Send</button>
+  
+            </form>
+          </div>
+         
+  
+  
+    </section>
+    <footer>
+        <div class="socialmedia">
+            <div >
+                <a target="_blank" href="https://github.com/Sadik-Dev"> 
+                    <img src="images/github.png">
+                </a>
+            </div>
+            <div >
+                <a target="_blank" href="https://www.linkedin.com/in/oussama-sadik">
+                    <img src="images/ln.png">
+                </a>
+            </div>
+        </div>
+       
+        <a onclick="openCredits()">Credits</a>
+
+        <p> Copyright &#169; 2020 Sadik Dev.	</p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+    <script src="js/home.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="js/mail.js"></script>
+</body>
+</html>
+
