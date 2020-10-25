@@ -101,7 +101,7 @@ function filter(type){
 
 let projects = [
     {
-        image: "images/hm1.png ",
+        image: "images/hm1.png",
         title: "Website: HM Technics",
         type: 1,
         specs: [
@@ -115,7 +115,7 @@ let projects = [
         }
 ,
     {
-        image: "images/fm.png ",
+        image: "images/fm.png",
         title: "Website: FM Concept",
         type: 1,
         specs: [
