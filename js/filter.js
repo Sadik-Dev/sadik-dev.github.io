@@ -101,7 +101,7 @@ function filter(type){
 
 let projects = [
     {
-        image: "images/hm1.png",
+        image: "images/hm.png",
         title: "Website: HM Technics",
         type: 1,
         specs: [
