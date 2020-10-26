@@ -464,8 +464,7 @@ html{
 .cardP{
     width: 35%;
     background-color: #bf3a30;
-    background-image: linear-gradient(315deg, #bf3a30 0%, #864ba2 74%);
-    height: auto;
+    background-image: linear-gradient(315deg, #e2746b 0%, #bc70e0 74%);    height: auto;
     padding: 35px;
     overflow: hidden;
     display: flex;
@@ -495,7 +494,7 @@ html{
 }
 .promo .cardP:nth-child(3){
     background-color: #045de9;
-background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+    background-image: linear-gradient(315deg, #5f98f1 0%, #65d3f1 74%);
 }
 footer{
     background: black;
