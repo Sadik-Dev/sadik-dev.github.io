@@ -81,7 +81,10 @@ body{
     margin: 0;
     font-family: 'Merriweather', serif;
 }
-
+.lga{
+    height: fit-content;
+    margin-top: 1%;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 4px;
