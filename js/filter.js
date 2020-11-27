@@ -142,7 +142,7 @@ let projects = [
 ,
     {        title: "Website: Lock-smith",
         image: "images/locksmith.png",
-        url: "https://lock-smith.be",
+        url: "https://www.slotenmakervandaag.be/",
         type: 1,
         color: "#f4f4f4",
         specs: [
