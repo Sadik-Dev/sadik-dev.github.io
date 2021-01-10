@@ -132,7 +132,7 @@ let projects = [
         }
         ,
     {
-        image: "images/hm1.png ",
+        image: "images/hmt1.png ",
         title: "Website: HM Technics",
         type: 1,
         specs: [
