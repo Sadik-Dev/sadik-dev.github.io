@@ -66,6 +66,8 @@
    margin: 40px auto auto auto;
     border-radius: 0px;
     height: auto;
+    box-shadow: 5px 4px 17px 0px #00000061;
+
 }
 .col{
     display: flex;
@@ -121,6 +123,7 @@
 }
 .noprojects .col{
     margin: auto;
+    margin-top: 0;
 }
 .noprojects h3, .noprojects h2{
     margin: auto;
@@ -131,6 +134,8 @@
 }
 .noprojects img{
     width: 50%;
+    box-shadow: none;
+    margin-bottom: 0;
 }
 
 @media (max-width: 700px){

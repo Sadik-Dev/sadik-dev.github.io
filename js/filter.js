@@ -28,6 +28,10 @@ function filter(type){
                     card.style.background = p.color;
                     let img = document.createElement("img");
                     img.src = p.image;
+
+                    if(type == 2){
+                        img.classList.add("app");
+                    }
                     
 
                     card.append(img);
@@ -100,11 +104,39 @@ function filter(type){
 
 
 let projects = [
+   /* {
+        image: "images/assister.png ",
+        title: "App: Assister",
+        type: 2,
+        specs: [
+            "Streaming website",
+            "Asp.Net MVC"
+        ],
+        url: "https://orientalia-show.com",
+        color: "#ffbb98",
+        shade: "white"
+
+        },*/
     {
-        image: "images/hm.png",
+        image: "images/ors.png ",
+        title: "Web App: Orientalia Show",
+        type: 1,
+        specs: [
+            "Streaming website",
+            "Asp.Net MVC"
+        ],
+        url: "https://orientalia-show.com",
+        color: "#bf0a30",
+        shade: "white"
+
+        }
+        ,
+    {
+        image: "images/hm1.png ",
         title: "Website: HM Technics",
         type: 1,
         specs: [
+            "Construction company",
             "Asp.Net MVC",
             "Lazy_Gallery.js"
         ],
@@ -115,10 +147,11 @@ let projects = [
         }
 ,
     {
-        image: "images/fm.png",
+        image: "images/fm.png ",
         title: "Website: FM Concept",
         type: 1,
         specs: [
+            "Construction company",
             "HTML, CSS and JS",
             "Lazy_Gallery.js"
         ],
@@ -142,7 +175,7 @@ let projects = [
 ,
     {        title: "Website: Lock-smith",
         image: "images/locksmith.png",
-        url: "https://www.slotenmakervandaag.be/",
+        url: "https://lock-smith.be",
         type: 1,
         color: "#f4f4f4",
         specs: [
