@@ -128,6 +128,7 @@ form button{
 }
 .formImg{
     width: 40%;
+    max-height: 40%;
     margin: 0;
 }
 
