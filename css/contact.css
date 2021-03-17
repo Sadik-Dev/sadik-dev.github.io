@@ -112,7 +112,7 @@ form input, form select{
 }
 
 form button{
-    margin-top: 10%;
+    margin: 10% 0 0 0;
     border-radius: 5px;
     background: #D6A6A4;
     border: 0px;
@@ -125,6 +125,7 @@ form button{
     font-weight: 400;
     font-family: inherit;
     box-shadow: 0px 0px 20px 0px #00000021;
+
 }
 .formImg{
     width: 40%;
