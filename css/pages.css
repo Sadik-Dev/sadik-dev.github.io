@@ -142,4 +142,8 @@
     .cardP {
         width: 90%;
     }
+
+    body{
+        font-size: 0.9em;
+    }
 }
