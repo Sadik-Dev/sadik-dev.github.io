@@ -248,7 +248,9 @@ form textarea{
         margin: auto;
     }
     .formImg{
-        margin: auto
+        margin: auto;
+        width: auto;
+        height: 150px;
     }
 
 }
@@ -290,6 +292,7 @@ form textarea{
         width: 90%;
         margin-bottom: 10%;
     }
+   
 }
 
 @media (max-width: 320px){

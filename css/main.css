@@ -602,3 +602,19 @@ a:visited{
     }
    
  }
+
+ @media (max-width: 400px){
+
+    .mainT {
+        font-size: 1.5em;
+    }
+    
+    .socialmedia{
+        margin-top: auto;
+        margin-bottom: 5px;
+    }
+  
+   .bolded{
+       font-size: 0.9em;
+   }
+ }
