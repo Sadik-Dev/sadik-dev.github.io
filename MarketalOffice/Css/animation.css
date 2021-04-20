@@ -1,0 +1,9 @@
+.stage {
+    display: flex;
+}
+
+@keyframes bounce-1 {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-60%); }
+    100% { transform: translateY(0); }
+}
