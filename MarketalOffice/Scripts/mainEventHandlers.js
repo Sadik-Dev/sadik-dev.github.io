@@ -1,5 +1,5 @@
 $(document).ready(function(){
-var pass = prompt('ok');
+var pass = prompt('Password:');
 if(pass === 'hmd123'){
     document.getElementsByTagName("html")[0].style.visibility = "visible";
 }
