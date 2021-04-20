@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    background: url("/images/bg7.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+
+}
+.hider{
+    background: rgba(128, 128, 128, 0.459);
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: black;
+    display: flex;
+}
+
+.popup{
+    width: 70%;
+    background: rgba(128, 128, 128, 0.534);
+    margin: auto;
+    padding: 5%;
+    text-align: center;
+    border-radius: 5px;
+}
+.popup h4{
+    color: rgba(255, 255, 255, 0.836);
+}
+.choices{
+    display: flex; 
+    flex-direction: row;
+}
+
+
+.choices img{
+    width: 100px;
+    margin: auto;
+}
+
+.choice{
+    width: 50%;
+    margin-top: 5%;
+}
