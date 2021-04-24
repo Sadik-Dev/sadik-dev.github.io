@@ -10,4 +10,13 @@ $('#menu').click(openMenu);
 //Close Menu
 $('#closeNav').click(closeMenu);
 
+ //Service cards
+ if ( $( ".serviceCard" ).length ) {
+ 
+    $('.serviceCard').click(function(){
+        var element = $('#' + $(this).attr('data-scroll'));
+        element.get(0).scrollIntoView();
+    });
+ 
+}
 });

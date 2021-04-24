@@ -1,0 +1,452 @@
+:root {
+    --primary: #ff8747;
+    --primaryOpac: #ff8747ef;
+    --primaryOpac2: #ff8747b8;
+    --secondary: #007c80;
+    --white: #FBFBFB;
+    --grey: #737373;
+  }
+
+.firstPage{
+    height: 55vh;
+    max-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+.pageHead{
+    height: 20%;
+}
+.imgBg{
+    opacity: 0.1;
+    position: absolute;
+    left: 0;
+    top: -60%;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+.headContent{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+.headContent h3{
+    color: rgba(255, 255, 255, 0.863);
+    font-size: 1.6em;
+}
+.headContent h1{
+    margin-top: 0;
+}
+.headContent .contactButton{
+    background: var(--primary);
+    opacity: 1;
+    margin-bottom: 5%;
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    width: fit-content;
+    padding: 7px 20px;
+    color: var(--secondary);
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.headContent .contactButton:hover{
+    background: rgba(255, 255, 255, 0);
+    border: 2px solid white;
+    color: white;
+}
+/*Service Section */
+.serviceSection{
+    background: #F4F4F4;
+    height: auto;
+    padding-top: 2%;
+}
+.article{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(131, 131, 131, 0.1);
+    padding-bottom: 5%;
+    align-items: center;
+}
+.topArticle{
+    color: #ff8747;
+    text-align: left;
+    font-size: 1.2em;
+    padding-top: 0%;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 10%;
+}
+.article .textContainer{
+    color: black;
+    width: 40%;
+    margin: 0;
+}
+.article .textContainer h2{
+    color: black;
+    margin-top: 6px;
+}
+.article .textContainer p{
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+.article img{
+    width: 40%;
+    opacity: 1;
+    box-shadow: 0 0 20px 5px rgb(0 0 0 / 4%);
+}
+.reverseRow{
+    flex-direction: row-reverse;
+}
+.businessPlan{
+    width: 100%;
+    background: var(--primary);
+    height: 40vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.businessPlan img{
+    opacity: 0.1;
+    top: -125%;
+    z-index: 1;
+}
+.businessPlan h3{
+    color: rgba(255, 255, 255, 0.795);
+    font-size: 1.5em;
+    z-index: 2;
+
+}
+.businessPlan h2{
+    color: white;
+    font-size: 2.8em;
+    z-index: 2;
+
+}
+.businessPlan a{
+    border: 2px solid var(--secondary);
+    color: var(--primary);
+    background: var(--secondary);
+    font-size: 1.3em;
+    padding: 10px 20px;
+    z-index: 2;
+    font-weight: 600;
+}
+.businessPlan a:hover{
+    color: white;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0);
+    transition-duration: 0.5s;
+}
+.serviceOverview{
+    width: 65%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+.serviceOverview h1{
+    color:  #000000ce;
+    font-size: 2.5em;
+}
+.serviceOverview h4{
+    color:  #00000069;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    margin-bottom: 5%;
+}
+.serviceOverview .cardContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.serviceCard{
+    width: 30%;
+    height: 450px;
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+    justify-content: center ;
+    z-index: 1;
+    perspective: 1000;
+
+}  
+.innerCard {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+ 
+  }
+  .serviceCard:hover .innerCard {
+    transform: rotateX(180deg);
+    cursor:pointer;
+  }
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .serviceCard p{
+    text-align: center;
+    color: #797979;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-transform: uppercase;
+    
+}
+   .back {
+    display: block;
+    transform: rotateX(180deg);
+    box-sizing: border-box;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color: var(--primaryOpac2);
+    box-shadow: 0 2px 15px rgb(0 0 0 / 25%);
+    text-align: left;
+    padding: 40px;
+
+  }
+  .back h4{
+      font-size: 1.5em;
+      color: white;
+      font-weight: 500;
+      margin-top: 0rem;
+  }
+  .back p{
+      text-align: left;
+      color: rgba(255, 255, 255, 0.9);
+      text-transform: none;
+      font-size: 1em;
+      line-height: 1.6em;
+      font-weight: 400;
+  }
+  .back a{
+    text-align: left;
+    color: rgba(255, 255, 255, 0.788);
+    text-transform: none;
+    font-size: 0.9em;
+    line-height: 1.6em;
+    font-weight: 400;
+}
+.front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 5%);
+    opacity: 0.9;
+}
+
+.serviceCard img{
+    max-width: 80px;
+    filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(249deg) brightness(102%) contrast(109%);
+
+
+}
+.partners{
+    filter: invert(52%) sepia(77%) saturate(422%) hue-rotate(334deg) brightness(102%) contrast(107%);
+    margin-top: 5%;
+    opacity: 0.8;
+}
+.chooseUs{
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+.chooseUs ul{
+    padding: 0;
+    margin-left: 10%;
+
+}
+.chooseUs li{
+    color: black;
+    font-size: 1.2em;
+    margin-bottom: 2%;
+}
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+.chooseUs h1{
+    color: black;
+    text-align: left;
+    font-size: 2em;
+    padding-top: 0%;
+    margin-top: 1%;
+    font-weight: 600;
+    margin-left: 5%;
+    width: 60%;
+    line-height: 1.4em;
+}
+.chooseUs h4{
+    color: #ff8747;
+    text-align: left;
+    font-size: 1.2em;
+    padding-top: 0%;
+    font-weight: 700;
+    margin-left: 5%;
+    margin-bottom: 0;
+
+}
+.chooseUs .textContainer{
+    background: #F4F4F4;
+    width: 50%;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 2% 0 4% 0;
+   /* box-shadow: 1px 2px 6px 0px #0000001f;*/
+
+}
+.mdImageContainer{
+    width: 80%;
+    margin-top: 0%;
+    position: relative;
+    z-index: -1;
+    margin-left: auto;
+}
+.mdImageContainer .rectangle{
+    background: var(--secondary);
+    width: 100%;
+    height: 100%;
+    left: auto;
+    right: -50%;
+    bottom: -50%;
+}
+.mdImageContainer img{
+    width: 100%;
+   /* border: 5px solid var(--primary); */
+    z-index: 5;
+    opacity: 0.9;
+}
+
+.button1{
+    background: var(--primary);
+    opacity: 0.8;
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    width: fit-content;
+    padding: 7px 20px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 5%;
+    margin-top: 50px;
+    position: absolute;
+    bottom: 5%;
+    right: 4%;
+}
+.button1:hover{
+    background: rgba(255, 255, 255, 0);
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    transition-duration: 0.5s;
+}
+@media (max-width: 1750px){
+    .serviceCard{
+        height: 600px;
+        width: 33%;
+    }
+    .businessPlan{
+        text-align: center;
+    }
+}
+
+@media (max-width: 1366px){
+    .firstPage{
+        height: fit-content;
+    }
+    .serviceCard{
+        height: 600px;
+        width: 45%;
+    }
+    .businessPlan{
+        height: auto;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+}
+@media (max-width: 1024px){
+    .mdImageContainer{
+        width: 100%;
+    }
+
+    .chooseUs h1{
+        width: 90%;
+    }
+    .chooseUs .textContainer{
+        width: 70%;
+    }
+}
+@media (max-width: 960px){
+    .article{
+        flex-direction: column-reverse;
+    }
+    .article img{
+        width: 90%;
+        margin-top: 5%;
+    }
+    .article .textContainer{
+        width: 90%;
+    }
+}
+@media (max-width: 680px){
+    .serviceOverview .cardContainer{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 580px){
+    .headContent{
+        width: 90%;
+    }
+    .serviceOverview{
+        width: 90%;
+    }
+    .serviceCard{
+        width: 90%;
+    }
+  
+    .article{
+        width: 90%;
+    }
+    .chooseUs{
+        height: 100vh;
+    }
+    .chooseUs .textContainer{
+        width: 90%;
+    }
+    .serviceOverview .back{
+        display: none;
+    }
+}
+@media (max-width: 500px){
+    .chooseUs .button1{
+        position: relative;
+        margin-left: 10%;
+
+    }
+    .chooseUs ul{
+        margin-bottom: 15%;
+    }
+}
+
+
