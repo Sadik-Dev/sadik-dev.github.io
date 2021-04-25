@@ -7,6 +7,12 @@
     --grey: #737373;
   }
 
+.lazyImage {
+   
+    background: url('/Ressources/Gifs/loading.gif') 50% no-repeat;
+   
+}
+
 .firstPage{
     height: 55vh;
     max-height: 600px;
@@ -394,6 +400,12 @@
     }
     .chooseUs .textContainer{
         width: 70%;
+    }
+    .imgBg{
+        top: 0;
+        margin: auto;
+        width: auto;
+        height: 100%;
     }
 }
 @media (max-width: 960px){
