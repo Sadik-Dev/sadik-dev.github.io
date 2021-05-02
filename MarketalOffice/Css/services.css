@@ -6,7 +6,12 @@
     --white: #FBFBFB;
     --grey: #737373;
   }
-
+html{
+    scroll-behavior: smooth;
+}
+html:focus-within {
+    scroll-behavior: smooth;
+  }
 .lazyImage {
    
     background: url('/Ressources/Gifs/loading.gif') 50% no-repeat;
@@ -69,6 +74,21 @@
     height: auto;
     padding-top: 2%;
 }
+.serviceImage{
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    margin: auto;
+    display: flex;
+    z-index: 1;
+}
+.imageContainer {
+    position: relative;
+    z-index: 1;
+    width: 70%;
+    min-height: 200px;
+    opacity: .9;
+}
 .article{
     width: 60%;
     margin: auto;
@@ -90,6 +110,7 @@
 .article .textContainer{
     color: black;
     width: 40%;
+    position: relative;
     margin: 0;
 }
 .article .textContainer h2{
@@ -103,7 +124,13 @@
 .article img{
     width: 40%;
     opacity: 1;
+    min-height: 100px;
     box-shadow: 0 0 20px 5px rgb(0 0 0 / 4%);
+}
+.article .textContainer li{
+    font-size: 1.1em;
+    margin-bottom: 3%;
+    font-weight: 600;
 }
 .reverseRow{
     flex-direction: row-reverse;
@@ -196,6 +223,17 @@
     transition: all 0.5s linear;
  
   }
+
+  @media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .innerCard {
+       
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+          }
+    }
+}
+
   .serviceCard:hover .innerCard {
     transform: rotateX(180deg);
     cursor:pointer;
@@ -221,11 +259,11 @@
     padding: 10px;
     color: white;
     text-align: center;
-    background-color: var(--primaryOpac2);
+    background-color: var(--primaryOpac);
     box-shadow: 0 2px 15px rgb(0 0 0 / 25%);
     text-align: left;
     padding: 40px;
-
+    opacity: 1;
   }
   .back h4{
       font-size: 1.5em;
@@ -255,7 +293,8 @@
     align-items: center;
     justify-content: center ;
     box-shadow: 0 2px 15px rgb(0 0 0 / 5%);
-    opacity: 0.9;
+    opacity: 1;
+    background: #F4F4F4;
 }
 
 .serviceCard img{
@@ -341,6 +380,8 @@
    /* border: 5px solid var(--primary); */
     z-index: 5;
     opacity: 0.9;
+    min-height: 300px;
+
 }
 
 .button1{
@@ -366,10 +407,31 @@
     color: rgb(0, 0, 0);
     transition-duration: 0.5s;
 }
+.button2{
+    background: transparent;
+    opacity: 0.8;
+    border: 2px solid black;
+    border-radius: 0px;
+    width: fit-content;
+    padding: 7px 20px;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 0%;
+    margin-top: 5%;
+   
+}
+.button2:hover{
+    background: var(--primary);
+    border: 2px solid  var(--primary);
+    color: rgb(255, 255, 255);
+    transition-duration: 0.5s;
+}
 @media (max-width: 1750px){
     .serviceCard{
-        height: 600px;
-        width: 33%;
+        height: 400px;
+        width: 45%;
     }
     .businessPlan{
         text-align: center;
