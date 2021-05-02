@@ -1,10 +1,10 @@
 $(document).ready(function(){
-    $(document).ready(function(){
-        var pass = prompt('Password:');
-        if(pass === 'hmd123'){
-            document.getElementsByTagName("html")[0].style.visibility = "visible";
-        }
-        
+
+    var pass = prompt('Password:');
+    if(pass === 'hmd123'){
+        document.getElementsByTagName("html")[0].style.visibility = "visible";
+    }
+    
     //Menu Hover Effect
     $('#menu').hover(menuMouseIn,menuMouseOut);   
     //Open Menu
