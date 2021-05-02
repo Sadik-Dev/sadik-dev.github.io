@@ -13,9 +13,8 @@ html:focus-within {
     scroll-behavior: smooth;
   }
 .lazyImage {
-   
     background: url('/Ressources/Gifs/loading.gif') 50% no-repeat;
-   
+   transition-duration: 0.5s;
 }
 
 .firstPage{
@@ -302,6 +301,10 @@ html:focus-within {
     filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(249deg) brightness(102%) contrast(109%);
 
 
+}
+.coloredIcons .serviceCard img{
+    filter: none;
+    max-width: 110px;
 }
 .partners{
     filter: invert(52%) sepia(77%) saturate(422%) hue-rotate(334deg) brightness(102%) contrast(107%);
