@@ -10,6 +10,7 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    visibility: hidden;
   }
   a:hover{
       cursor: pointer;
