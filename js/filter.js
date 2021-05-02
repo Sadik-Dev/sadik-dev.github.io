@@ -118,6 +118,18 @@ let projects = [
 
         },*/
     {
+        image: "images/mo.png ",
+        title: "Website: Marketal Office",
+        type: 1,
+        specs: [
+                  "Coming Soon"
+                ],
+        url: "",
+        color: "#00696D",
+        shade: "white"
+    
+     },
+    {
         image: "images/ors.png ",
         title: "Web App: Orientalia Show",
         type: 1,
@@ -125,7 +137,7 @@ let projects = [
             "Streaming website",
             "Asp.Net MVC"
         ],
-        url: "https://orientalia-show.com",
+        url: "http://alhaybavostfr.com/login/",
         color: "#bf0a30",
         shade: "white"
 
@@ -175,7 +187,7 @@ let projects = [
 ,
     {        title: "Website: Lock-smith",
         image: "images/locksmith.png",
-        url: "https://lock-smith.be",
+        url: "https://slotenmakerdaniel.be/en/locksmith-brussels/",
         type: 1,
         color: "#f4f4f4",
         specs: [
