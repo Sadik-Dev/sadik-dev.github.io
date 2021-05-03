@@ -1,0 +1,121 @@
+:root {
+    --primary: #ff8747;
+    --primaryOpac: #ff8747ef;
+    --secondary: #007c80;
+    --white: #FBFBFB;
+    --grey: #737373;
+  }
+
+.firstPage h1{
+    margin-bottom: 10px;
+
+}
+.servicePage{
+    background: #F8F8F8;
+    position: relative;
+}
+.servicePage .pageHead h1{
+    color: var(--secondary);
+}
+.absPlus{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 25px;
+    height: 200px;
+    margin: auto;
+    opacity: .9;
+}
+.cardContainer .card{
+    position: relative;
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 30px 40px 30px 40px;
+    box-shadow: 1px -1px 9px 0px #00000008;
+    width: 22%;
+    height: fit-content;
+}
+.card .number{
+    font-size: 3em;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    margin: 0;
+    color: var(--secondary);
+    opacity: .2;
+    
+}
+.cardContainer .card .cardImg{
+    width: 100px;
+    margin-bottom: 20px;
+}
+.card h3 {
+    color: var(--secondary);
+}
+.card .cardInfo{
+    color: black;
+   color: var(--secondary);
+}
+.servicePage .pageHead {
+    height: 13%;
+    width: 90%;
+}
+
+.cardContainer .card:nth-child(1){
+    margin-top: 3%;
+}
+.cardContainer .card:nth-child(2){
+    margin-top: 6%;
+}
+.cardContainer .card:nth-child(3){
+    margin-top: 9%;
+}
+.roundDots{
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    opacity: .2;
+}
+@media (max-width: 1200px){
+   .servicePage{
+       height: auto;
+       padding: 5% 0 5%;
+   }
+   .cardContainer{
+       flex-wrap: wrap;
+   }
+    .cardContainer .card:nth-child(2){
+        margin-top: 8%;
+    }
+    .cardContainer .card:nth-child(3){
+        margin-top: 14%;
+    }
+    .cardContainer .card{
+        width: 23%;
+    }
+}
+
+@media (max-width: 920px){
+    .cardContainer .card{
+        width: 30%;
+    }
+ }
+ 
+
+@media (max-width: 800px){
+    .absPlus{
+        display: none;
+    }
+}
+
+@media (max-width: 720px){
+    .cardContainer .card{
+        width: 70%;
+    }
+    .roundDots {
+        position: absolute;
+        bottom: 1%;
+        left: -11%;
+        opacity: .2;
+    }
+ }

@@ -10,7 +10,6 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    visibility: hidden;
   }
   a:hover{
       cursor: pointer;
@@ -164,6 +163,7 @@ header{
 .firstPage{
     height: 100vh;
     width: 100%;
+    overflow: hidden;
 }
 .pageHead{
     height: 15%;
@@ -343,6 +343,25 @@ header{
     height: 45px;
     margin-right: 15px;
     
+}
+
+.mainContent .imageContainer .dots{
+    border: none;
+    position: absolute;
+    bottom: 10%;
+    left: -22%;
+    z-index: -1;
+    height: 200px;
+    opacity: .6;
+}
+.mainContent .imageContainer .dots2{
+    border: none;
+    position: absolute;
+    top: 10%;
+    right: -22%;
+    z-index: -1;
+    height: 200px;
+    opacity: .6;
 }
 
 /*Service Page*/
@@ -656,6 +675,8 @@ footer a{
         justify-content: center;
         align-items: center;
         padding-bottom: 10%;
+        padding-top: 10%;
+
     }
     .businessPage .imageContainer{
         margin: 0;
@@ -683,6 +704,9 @@ footer a{
     .mainContent{
         width: 100%;
     }
+    .stage{
+        bottom: 20px;
+    }
 }
 @media (max-width: 600px){
     .mainContent .imageContainer img{
@@ -707,7 +731,7 @@ footer a{
 }
 @media (max-width: 500px){
     .mainContent .imageContainer img{
-        height: 250px;
+        height: 350px;
         margin-bottom: 30%;
     }
     .mainContent h1{
@@ -753,7 +777,7 @@ footer a{
 }
 @media (max-width: 400px){
     .mainContent .imageContainer img{
-        height: 150px;
+        height: 270px;
         margin-bottom: 0%;
     }
    
@@ -770,5 +794,15 @@ footer a{
     }
     .headerElement{
         margin-top: 20px;
+    }
+    .stage{
+        bottom: 0px;
+    }
+}
+
+@media (max-width: 300px){
+    .mainContent .imageContainer img{
+        height: 150px;
+        margin-bottom: 0%;
     }
 }

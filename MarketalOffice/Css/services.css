@@ -454,6 +454,10 @@ html:focus-within {
         padding-bottom: 20px;
         text-align: center;
     }
+    .rectangle{
+        width: 300px;
+        height: 300px;
+    }
 }
 @media (max-width: 1024px){
     .mdImageContainer{
@@ -472,10 +476,17 @@ html:focus-within {
         width: auto;
         height: 100%;
     }
+    .rectangle{
+        width: 200px;
+        height: 200px;
+    }
 }
 @media (max-width: 960px){
     .article{
         flex-direction: column-reverse;
+    }
+    .serviceOverview{
+        margin-bottom: 20%;
     }
     .article img{
         width: 90%;
@@ -484,10 +495,17 @@ html:focus-within {
     .article .textContainer{
         width: 90%;
     }
+    .imageContainer {
+       width: 90%;
+    }
 }
 @media (max-width: 680px){
     .serviceOverview .cardContainer{
         justify-content: center;
+    }
+    .rectangle{
+        width: 100px;
+        height: 100px;
     }
 }
 
