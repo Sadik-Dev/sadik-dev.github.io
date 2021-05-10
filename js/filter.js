@@ -122,9 +122,10 @@ let projects = [
         title: "Website: Marketal Office",
         type: 1,
         specs: [
-                  "Coming Soon"
+                  "Digital Marketing Company",
+                  "ASP.Net MVC"
                 ],
-        url: "",
+        url: "http://marketaloffice.be",
         color: "#00696D",
         shade: "white"
     
