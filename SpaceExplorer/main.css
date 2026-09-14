@@ -1,0 +1,484 @@
+:root {
+	color-scheme: dark;
+	--background: #060b12;
+	--text: #f1f0ed;
+	--muted: #8c949f;
+	--quiet: #596370;
+	--line: rgba(173, 190, 208, .14);
+	--accent: #d3b98a;
+}
+
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; }
+body { margin: 0; overflow: hidden; background: var(--background); color: var(--text); font-family: "Segoe UI", Arial, sans-serif; font-size: 14px; -webkit-font-smoothing: antialiased; }
+button, select { font: inherit; }
+button, a, select { -webkit-tap-highlight-color: transparent; outline-offset: 5px; }
+button { cursor: pointer; color: inherit; border: 0; background: none; }
+button:disabled { opacity: .4; cursor: default; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); }
+svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+button svg { pointer-events: none; }
+[hidden] { display: none !important; }
+.icon-definitions { position: absolute; width: 0; height: 0; overflow: hidden; }
+.flip { transform: rotate(180deg); }
+.eyebrow { margin: 0; color: var(--muted); font-size: 9px; font-weight: 500; line-height: 1.5; letter-spacing: 2.1px; }
+.tiny-cross { color: var(--accent); font-size: 14px; margin-right: 9px; }
+#container { position: fixed; inset: 0; background: radial-gradient(ellipse at 49% 60%, #142333 0, #0a1421 34%, #060b12 72%); }
+#container canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.scene-vignette { position: fixed; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(6,11,18,.35), transparent 38%, transparent 75%, rgba(6,11,18,.82)); }
+.topbar { position: fixed; inset: 0 40px auto; height: 92px; display: flex; align-items: center; gap: 34px; z-index: 5; border-bottom: 1px solid rgba(173,190,208,.075); }
+.brand { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; }
+.brand-icon { width: 30px; height: 30px; color: var(--accent); stroke-width: 1.1; }
+.brand-light { font-weight: 350; }
+.brand-wordmark small { display: block; margin-top: 5px; color: var(--quiet); font-size: 5px; font-weight: 400; letter-spacing: 1.25px; }
+.brand-wordmark small b { margin-left: 3px; color: var(--accent); font-family: ui-monospace, Consolas, monospace; font-size: 8px; font-weight: 400; letter-spacing: .3px; }
+.app-actions { display: flex; align-items: center; gap: 5px; }
+.app-actions svg { width: 16px; }
+.sound-button[aria-pressed="true"] { color: var(--accent); background: #d3b98a0c; }
+.main-nav { display: flex; align-items: stretch; gap: 32px; height: 100%; margin-left: 43px; }
+.nav-link { position: relative; padding: 0; color: var(--muted); font-size: 12px; }
+.main-nav a.nav-link { display: inline-flex; align-items: center; text-decoration: none; }
+.learning-guide-link { display: block; margin-bottom: 16px; }
+.nav-link:hover, .nav-link.is-active { color: var(--text); }
+.nav-link.is-active::after { position: absolute; content: ""; bottom: -1px; height: 2px; width: 18px; background: var(--accent); left: calc(50% - 9px); }
+.nav-link span { margin-left: 3px; color: var(--quiet); }
+.session-status { margin-left: auto; display: flex; gap: 9px; align-items: center; font-family: ui-monospace, Consolas, monospace; font-size: 8px; letter-spacing: 1.3px; color: var(--muted); white-space: nowrap; }
+.status-dot { width: 4px; height: 4px; border-radius: 50%; background: #afc9ba; box-shadow: 0 0 8px #afc9ba60; }
+body.is-paused .status-dot { background: var(--accent); box-shadow: none; }
+.status-divider { height: 11px; width: 1px; background: var(--line); margin: 0 8px; }
+.icon-button { display: inline-flex; align-items: center; justify-content: center; padding: 0; width: 34px; height: 34px; flex-shrink: 0; color: var(--muted); border-radius: 5px; transition: color .2s, background .2s; }
+.icon-button:hover { color: var(--text); background: rgba(255,255,255,.05); }
+.fullscreen-button { width: 30px; }
+.fullscreen-button svg { width: 16px; }
+.intro { position: fixed; top: 150px; left: 56px; z-index: 3; pointer-events: none; }
+.intro .eyebrow { display: flex; align-items: center; font-size: 8px; letter-spacing: 2.4px; }
+h1 { margin: 20px 0 18px; font-size: clamp(44px, 4.1vw, 70px); font-weight: 400; line-height: 1.08; letter-spacing: -2.8px; }
+h1 > span { color: #9099a6; }
+h1 > span:first-child { color: var(--text); }
+.guide-short { display: none; }
+.main-nav .guide-full, .main-nav .guide-short { color: inherit; margin: 0; }
+.language-button { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-width: 48px; height: 34px; padding: 0 5px; color: #b0bac6; border-radius: 5px; font-family: ui-monospace, Consolas, monospace; font-size: 9px; }
+.language-button svg { width: 15px; height: 15px; }
+.language-button:hover { background: #ffffff09; color: var(--accent); }
+.language-dialog { width: min(430px, calc(100% - 32px)); }
+.language-dialog h2 { font-size: 30px; }
+.language-options { display: grid; gap: 7px; margin-top: 27px; }
+.language-options button { display: flex; align-items: center; gap: 18px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; text-align: start; }
+.language-options button > span:first-child { font-family: ui-monospace, Consolas, monospace; color: var(--quiet); font-size: 10px; }
+.language-options button[aria-pressed="true"] { border-color: #d3b98a88; background: #d3b98a0c; color: var(--accent); }
+.language-options button[aria-pressed="true"]::after { content: '✓'; margin-inline-start: auto; }
+.language-options button:hover { background: #ffffff08; }
+#fallbackLanguageButton { display: block; margin-top: 22px; color: var(--accent); }
+.planet-stats dd { text-align: end; unicode-bidi: isolate; }
+.intro-copy { margin: 0; font-size: 12px; line-height: 1.9; color: var(--muted); }
+.text-button { display: inline-flex; align-items: center; gap: 11px; padding: 0; font-size: 11px; color: #c5ccd3; }
+.text-button:hover { color: #fff; }
+.text-button svg { width: 16px; }
+.tour-button { margin-top: 29px; pointer-events: auto; }
+.tour-icon { font-size: 20px; color: var(--accent); }
+.tour-button svg { color: var(--quiet); margin-left: 9px; transition: transform .2s; }
+.tour-button:hover svg { transform: translateX(4px); }
+.planet-panel { position: fixed; top: 156px; right: 56px; width: 224px; z-index: 4; border-top: 1px solid var(--line); padding-top: 13px; }
+.panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.panel-heading .eyebrow { font-size: 7px; letter-spacing: 1.6px; }
+.planet-paging { display: flex; gap: 5px; align-items: center; color: var(--quiet); font-family: ui-monospace, Consolas, monospace; font-size: 8px; }
+.planet-paging .icon-button { width: 20px; height: 24px; }
+.planet-paging svg { width: 12px; }
+.planet-panel h2 { display: flex; align-items: center; gap: 10px; margin: 20px 0 7px; font-size: 28px; font-weight: 450; letter-spacing: -.7px; }
+.planet-dot { height: 6px; width: 6px; background: var(--planet-color); border-radius: 50%; box-shadow: 0 0 12px color-mix(in srgb, var(--planet-color), transparent 65%); }
+.body-type { color: var(--quiet); margin: 0 0 28px 16px; font-size: 7px; letter-spacing: 1.7px; }
+.period .eyebrow { font-size: 7px; letter-spacing: 1.5px; margin-bottom: 7px; }
+#orbitalPeriod { font-size: 43px; font-weight: 350; letter-spacing: -1.8px; font-variant-numeric: tabular-nums; }
+#periodUnit { margin-left: 9px; color: var(--muted); font-size: 10px; }
+.planet-description { margin: 18px 0 23px; font-size: 12px; line-height: 1.85; color: #959eaa; }
+.planet-stats { margin: 0 0 24px; font-size: 11px; }
+.planet-stats > div { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(173,190,208,.08); }
+.planet-stats dt { color: var(--quiet); }
+.planet-stats dd { margin: 0; color: #bdc5cf; font-variant-numeric: tabular-nums; text-align: right; }
+.focus-button { display: flex; width: 100%; justify-content: space-between; align-items: center; padding: 0 0 9px; color: #d9c49f; font-size: 11px; }
+.focus-button svg { width: 17px; transition: transform .2s; }
+.focus-button:hover svg { transform: translateX(4px); }
+.moon-link { color: var(--quiet); padding: 9px 0; font-size: 9px; }
+.moon-link:hover { color: var(--text); }
+.moon-link span { margin-left: 5px; }
+.facts-button { display: none; }
+.info-dialog .world-fact { border-left: 1px solid var(--accent); padding-left: 16px; margin-top: 28px; color: var(--accent); }
+.planet-labels { position: fixed; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+.planet-label { position: absolute; left: 0; top: 0; padding: 6px 10px; border-left: 1px solid rgba(177,196,216,.25); border-radius: 0; white-space: nowrap; background: none; text-align: left; pointer-events: auto; opacity: .75; transform: translate(-50%, -100%); }
+.planet-label:hover, .planet-label.is-selected { opacity: 1; border-left-color: var(--planet-color); }
+.planet-label.is-hovered { opacity: 1; border-left-color: var(--planet-color); background: #101d2a66; }
+.label-name { display: block; font-size: 11px; font-weight: 500; color: #d8dfe7; line-height: 1.6; }
+.label-period { display: block; font-family: ui-monospace, Consolas, monospace; font-size: 7px; color: #7a8594; }
+.planet-label.is-selected .label-name { color: var(--planet-color); }
+.view-options { position: fixed; bottom: 178px; left: 46px; z-index: 4; }
+.view-options > .eyebrow { font-size: 7px; letter-spacing: 1.8px; margin-bottom: 15px; color: var(--quiet); }
+.view-options > div { display: flex; gap: 14px; }
+.option-button { display: flex; align-items: center; padding: 0; gap: 6px; color: #85909f; font-size: 9px; min-height: 28px; }
+.option-button svg { width: 15px; height: 15px; }
+.option-button[aria-pressed="true"] { color: #a8b3c1; }
+.option-button:hover { color: var(--text); }
+.option-button[aria-disabled="true"] { opacity: .5; }
+.camera-controls { position: fixed; right: 16px; bottom: 170px; z-index: 4; display: flex; flex-direction: column; gap: 1px; }
+.camera-controls button { font-size: 20px; font-weight: 300; height: 34px; width: 34px; }
+.camera-controls button svg { width: 15px; }
+.camera-controls > span { margin: 7px 8px; height: 1px; background: var(--line); }
+.control-dock { position: fixed; bottom: 121px; left: 50%; transform: translateX(-50%); z-index: 5; display: flex; align-items: center; gap: 13px; padding: 7px; height: 53px; border: 1px solid rgba(184,199,218,.15); border-radius: 9px; background: rgba(12,20,30,.84); box-shadow: 0 8px 40px #0004, inset 0 1px 0 #ffffff04; backdrop-filter: blur(14px); white-space: nowrap; }
+.view-segment { display: flex; gap: 2px; }
+.view-segment button { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 13px; border-radius: 5px; color: var(--muted); font-size: 10px; }
+.view-segment button svg { width: 15px; height: 15px; }
+.view-segment .is-active { color: #151c24; background: #e2e4e5; box-shadow: 0 1px 6px #0002; }
+.dock-divider { height: 20px; width: 1px; background: var(--line); }
+.play-button { width: 27px; }
+.play-button svg { width: 16px; }
+.speed-control { display: flex; align-items: center; gap: 9px; }
+.speed-control > span { font-size: 6px; letter-spacing: 1.5px; color: var(--quiet); }
+.speed-control select { color: #d3dae2; font-size: 11px; border: 0; background: #0c141e; cursor: pointer; padding: 6px 0; width: 46px; }
+.speed-unit { color: var(--quiet); font-size: 8px; }
+.time-reset svg { width: 14px; }
+.time-reset { width: 25px; }
+.mobile-day { display: none; }
+.planet-nav { position: fixed; bottom: 47px; left: 50%; transform: translateX(-50%); z-index: 5; display: flex; justify-content: center; gap: 14px; max-width: calc(100% - 90px); }
+.planet-nav button { position: relative; min-width: 72px; padding: 8px 9px 6px; display: flex; align-items: center; gap: 8px; font-size: 9px; color: #727f8f; border-radius: 5px; transition: color .2s, background .2s; }
+.planet-nav button:hover { background: #ffffff05; color: var(--text); }
+.planet-nav button.is-active { color: var(--text); background: #ffffff05; }
+.planet-nav button.is-active::after { content: ""; position: absolute; bottom: -8px; left: calc(50% - 2px); width: 3px; height: 3px; border-radius: 50%; background: var(--planet-color); }
+.planet-thumbnail { width: 15px; height: 15px; flex-shrink: 0; border-radius: 50%; background-size: auto 100%; background-position: 40% center; box-shadow: inset -5px -2px 5px #000b; }
+.planet-nav [data-world="saturn"] .planet-thumbnail { position: relative; }
+.planet-nav [data-world="saturn"] .planet-thumbnail::after { content: ""; position: absolute; inset: 5px -4px; border: 2px solid #c8b79699; border-radius: 50%; transform: rotate(-25deg); }
+.footer { position: fixed; bottom: 0; left: 40px; right: 40px; height: 38px; display: flex; justify-content: space-between; align-items: center; gap: 20px; z-index: 4; border-top: 1px solid rgba(173,190,208,.07); font-size: 7px; color: #586373; }
+.scale-note { display: flex; align-items: center; }
+.scale-note .tiny-cross { font-size: 11px; color: var(--quiet); }
+.interaction-hint { display: flex; gap: 10px; align-items: center; }
+.interaction-hint svg { width: 10px; height: 14px; }
+.interaction-hint > span { color: #3d4856; }
+.interaction-hint > [data-i18n] { color: inherit; }
+.footer-link { color: var(--muted); font-size: 7px; padding: 5px 0; }
+.footer-link > span { padding-left: 8px; }
+.footer-link strong { color: var(--accent); font-family: ui-monospace, Consolas, monospace; font-weight: 400; }
+.footer-link .signature-dot { display: inline-block; width: 3px; height: 3px; padding: 0; margin-right: 6px; border-radius: 50%; background: var(--accent); }
+.focus-caption { position: fixed; top: 51%; left: 56px; max-width: 250px; z-index: 4; }
+.focus-caption > p { font-size: 24px; line-height: 1.4; font-weight: 350; letter-spacing: -.5px; }
+.focus-caption .text-button { margin-top: 10px; font-size: 10px; }
+body.is-focused .intro { opacity: .48; }
+body.is-focused .scene-vignette { background: linear-gradient(90deg, #060b12e8 0, #060b1299 20%, transparent 36%, transparent 65%, #060b12d9 84%, #060b12e8), linear-gradient(0deg, #060b12e6, transparent 35%); }
+.loading-notice { position: fixed; top: 47%; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 15px; z-index: 6; color: #a7b2c0; background: #0b141ee6; border: 1px solid var(--line); border-radius: 8px; padding: 18px 23px; font-size: 12px; }
+.loading-orbit { width: 18px; height: 18px; border: 1px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: spin 1.2s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+#toast { position: fixed; left: 50%; bottom: 189px; transform: translate(-50%, 8px); opacity: 0; pointer-events: none; z-index: 15; padding: 10px 16px; border: 1px solid var(--line); border-radius: 6px; background: #0b141ee8; color: #bac4d0; font-size: 11px; transition: .2s; }
+#toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.info-dialog { width: min(510px, calc(100% - 32px)); max-height: calc(100dvh - 60px); overflow: auto; color: var(--text); background: #0b141f; border: 1px solid #ffffff20; border-radius: 12px; padding: 40px; box-shadow: 0 35px 120px #0009; }
+.info-dialog::backdrop { background: #03070dcc; backdrop-filter: blur(9px); }
+.dialog-close { position: absolute; right: 16px; top: 16px; }
+.dialog-close svg { width: 18px; }
+.info-dialog h2 { margin: 24px 0 20px; font-size: 37px; font-weight: 400; letter-spacing: -1.5px; line-height: 1.15; }
+.info-dialog > p:not(.eyebrow), .guide-steps p { color: #93a0b1; font-size: 12px; line-height: 1.9; }
+.info-dialog h3 { font-size: 13px; font-weight: 500; margin-top: 25px; }
+.guide-steps { margin-top: 30px; }
+.guide-steps > div { display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid var(--line); }
+.guide-steps > div > span { color: var(--accent); font-family: ui-monospace, monospace; font-size: 10px; padding-top: 3px; }
+.guide-steps h3 { margin: 0 0 7px; }
+.guide-steps p { margin: 0; }
+.info-dialog .dialog-note { font-size: 10px !important; color: #748194 !important; border-top: 1px solid var(--line); padding-top: 20px; }
+.text-link { display: inline-block; font-size: 11px; text-decoration: none; color: var(--accent); margin-top: 15px; }
+.webgl-fallback { position: fixed; z-index: 20; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 38px; max-width: 460px; width: calc(100% - 32px); background: #0b141f; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 0 0 100vmax #060b12e8; }
+.webgl-fallback h2 { font-size: 30px; font-weight: 400; letter-spacing: -1px; }
+.webgl-fallback p { line-height: 1.8; color: var(--muted); }
+.webgl-fallback a { font-size: 12px; color: var(--accent); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.exploration-preferences { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 22px; }
+.exploration-preferences label { font-size: 12px; }
+.exploration-preferences select { float: right; max-width: 58%; padding: 5px 8px; border: 1px solid var(--line); border-radius: 4px; background: #101d2b; color: var(--text); font-size: 11px; }
+.exploration-preferences p { clear: both; padding-top: 13px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+.exploration-preferences .text-button { margin-top: 8px; color: var(--accent); }
+.creator-mark { display: flex; align-items: center; gap: 20px; margin: 28px 0; padding: 20px 0; border-block: 1px solid var(--line); }
+.creator-mark > span { color: var(--accent); font-size: 48px; font-weight: 350; letter-spacing: -5px; }
+.creator-glyph i { font-style: normal; color: #dedbd4; }
+.creator-mark small { display: block; color: var(--quiet); font-size: 10px; }
+.creator-mark p { margin: 0; font-size: 10px; color: var(--muted); line-height: 1.9; }
+.creator-mark strong { color: var(--accent); font-family: ui-monospace, Consolas, monospace; font-size: 12px; font-weight: 400; }
+.topbar, .intro, .planet-panel, .focus-caption, .view-options, .camera-controls, .control-dock, .planet-nav, .footer { transition: opacity .6s ease, visibility .6s; }
+body.is-cinema :is(.topbar, .intro, .planet-panel, .focus-caption, .view-options, .camera-controls, .control-dock, .planet-nav, .footer) { opacity: 0; visibility: hidden; pointer-events: none; }
+body.is-cinema .scene-vignette { background: linear-gradient(0deg, #060b12cc, transparent 30%, transparent 80%, #060b1266); }
+.cinema-hud { position: fixed; inset: 0; z-index: 6; pointer-events: none; animation: reveal-cinema .8s ease both; }
+.cinema-hud:focus { outline: none; }
+.cinema-signature { position: absolute; top: 30px; left: 40px; display: flex; align-items: center; gap: 0; font-size: 27px; font-weight: 350; letter-spacing: -2px; color: #d8d4cd; }
+.cinema-signature > span { color: var(--accent); }
+.cinema-signature small { margin-left: 19px; color: #7f8a98; font-family: ui-monospace, Consolas, monospace; font-size: 7px; letter-spacing: 1px; }
+#exitCinemaButton { position: absolute; right: 36px; top: 28px; pointer-events: auto; border: 1px solid var(--line); border-radius: 50%; }
+.cinema-caption { position: absolute; left: 56px; bottom: 117px; max-width: 60%; text-shadow: 0 2px 24px #03080c; }
+.cinema-caption .eyebrow { color: #a5a096; font-size: 7px; letter-spacing: 2.7px; }
+.cinema-caption h2 { margin: 12px 0 7px; font-size: clamp(42px, 5vw, 76px); font-weight: 350; line-height: 1.1; letter-spacing: -2.5px; }
+.cinema-caption > p:last-child { margin: 0; color: #8b97a6; font-size: 12px; letter-spacing: .3px; }
+.cinema-dock { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 30px; background: #0b141ab3; backdrop-filter: blur(16px); pointer-events: auto; }
+.cinema-dock .icon-button { border-radius: 50%; }
+.cinema-dock svg { width: 15px; }
+#cinemaDay { color: var(--muted); font-family: ui-monospace, Consolas, monospace; font-size: 8px; letter-spacing: 1px; padding: 0 12px; white-space: nowrap; }
+#endJourneyButton { border-left: 1px solid var(--line); padding: 8px 10px 8px 16px; color: var(--accent); font-size: 9px; white-space: nowrap; }
+.tour-progress { position: fixed; bottom: 0; left: 0; right: 0; height: 2px; z-index: 7; background: #d3b98a10; pointer-events: none; }
+.tour-progress span { display: block; width: 100%; height: 100%; background: var(--accent); opacity: .7; transform: scaleX(var(--progress, 0)); transform-origin: left; transition: transform .25s linear; }
+body.is-cinema #toast { bottom: 105px; }
+@keyframes reveal-cinema { from { opacity: 0; } to { opacity: 1; } }
+
+@media (min-width: 1700px) {
+	.intro { top: 170px; left: 70px; }
+	.planet-panel { top: 176px; right: 70px; width: 245px; }
+	.planet-description { font-size: 12px; }
+	.planet-stats { font-size: 11px; }
+	.view-options { bottom: 195px; }
+}
+@media (max-width: 1100px) {
+	.topbar { left: 27px; right: 27px; gap: 20px; }
+	.main-nav { margin-left: 10px; gap: 22px; }
+	.brand { font-size: 10px; gap: 8px; letter-spacing: 1.5px; }
+	.session-status { display: none; }
+	.app-actions { margin-inline-start: auto; }
+	.nav-link { white-space: nowrap; }
+	.mobile-day { display: block; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-family: ui-monospace, Consolas, monospace; color: var(--quiet); font-size: 7px; letter-spacing: 1px; }
+	.intro { top: 133px; left: 35px; }
+	h1 { font-size: 48px; }
+	.planet-panel { right: 35px; top: 136px; width: 197px; }
+	.planet-panel h2 { margin-top: 14px; }
+	.planet-description { font-size: 10px; margin: 12px 0; }
+	.body-type { margin-bottom: 19px; }
+	.planet-stats { margin-bottom: 18px; font-size: 9px; }
+	.view-options { left: 30px; bottom: 192px; }
+	.planet-nav { gap: 3px; max-width: calc(100% - 40px); }
+	.planet-nav button { min-width: 65px; padding: 8px 6px; }
+	.footer { left: 27px; right: 27px; }
+	.footer-link { display: none; }
+	.focus-caption { left: 35px; max-width: 200px; }
+}
+@media (max-width: 760px) {
+	.topbar { left: 21px; right: 21px; height: 71px; gap: 16px; }
+	.brand { font-size: 10px; }
+	.brand-icon { width: 26px; }
+	.main-nav { margin-left: auto; gap: 0; }
+	.main-nav .nav-link { display: none; }
+	.main-nav a.learning-nav { display: none; }
+	.main-nav .nav-link[data-dialog="guideDialog"] { display: block; font-size: 10px; }
+	.session-status { display: none; }
+	.fullscreen-button { width: 22px; }
+	.app-actions { gap: 1px; }
+	.app-actions .icon-button { width: 25px; }
+	.brand-wordmark small { letter-spacing: .6px; font-size: 4px; }
+	.brand-wordmark small b { font-size: 7px; }
+	.topbar { gap: 11px; }
+	.intro { top: 105px; left: 25px; }
+	.intro .eyebrow { font-size: 6px; letter-spacing: 1.7px; }
+	h1 { font-size: 42px; letter-spacing: -2px; margin: 13px 0 15px; }
+	.intro-copy { font-size: 10px; }
+	.tour-button { margin-top: 18px; font-size: 9px; gap: 7px; }
+	.tour-button svg { margin-left: 0; width: 13px; }
+	.planet-panel { top: 112px; right: 24px; width: 150px; padding-top: 9px; }
+	.panel-heading .eyebrow { font-size: 6px; letter-spacing: 1px; }
+	.planet-paging { gap: 0; font-size: 7px; }
+	.planet-paging .icon-button { width: 17px; }
+	.planet-panel h2 { margin: 12px 0 4px; font-size: 23px; }
+	.body-type { font-size: 6px; letter-spacing: 1px; margin-bottom: 15px; }
+	.period .eyebrow { font-size: 5px; letter-spacing: 1px; margin-bottom: 3px; }
+	#orbitalPeriod { font-size: 33px; }
+	#periodUnit { font-size: 8px; margin-left: 5px; }
+	.planet-description, .planet-stats, .moon-link { display: none; }
+	.focus-button { margin-top: 12px; font-size: 9px; }
+	.focus-button svg { width: 14px; }
+	.focus-button svg { height: 14px; }
+	.planet-extras { display: flex; align-items: center; gap: 9px; }
+	.facts-button { display: block; padding: 9px 0; color: #a6b2c1; font-size: 8px; }
+	.planet-extras .moon-link { font-size: 8px; }
+	.view-options { left: 24px; bottom: 187px; }
+	.view-options > .eyebrow { display: none; }
+	.view-options > div { gap: 15px; }
+	.option-button { font-size: 8px; }
+	.option-button svg { width: 14px; }
+	.camera-controls { right: 18px; bottom: 175px; }
+	.camera-controls button { height: 29px; }
+	.camera-controls > span { margin: 4px 8px; }
+	.control-dock { bottom: 116px; gap: 10px; padding: 6px; height: 49px; }
+	.view-segment button { padding: 9px 11px; font-size: 9px; gap: 6px; }
+	.view-segment button svg { width: 13px; }
+	.speed-control > span, .speed-unit, .time-reset, .control-dock > .dock-divider:last-of-type { display: none; }
+	.speed-control select { width: 46px; }
+	.planet-nav { bottom: 46px; left: 16px; right: 16px; transform: none; max-width: none; justify-content: flex-start; overflow-x: auto; padding: 4px 0 12px; gap: 4px; scrollbar-width: none; }
+	.planet-nav::-webkit-scrollbar { display: none; }
+	.planet-nav button { flex-shrink: 0; padding: 7px 8px; font-size: 9px; }
+	.planet-thumbnail { width: 15px; height: 15px; }
+	.footer { height: 36px; left: 24px; right: 24px; font-size: 6px; }
+	.interaction-hint { display: none; }
+	.footer-link { display: block; font-size: 6px; }
+	.planet-label { padding: 4px 6px; }
+	body.is-focused .planet-label.is-selected { display: none; }
+	.label-name { font-size: 9px; }
+	.label-period { display: none; }
+	.focus-caption { left: 25px; top: auto; bottom: 240px; max-width: 200px; }
+	.focus-caption .eyebrow { font-size: 6px; }
+	.focus-caption > p { font-size: 18px; margin: 10px 0; }
+	body.is-focused .intro { visibility: hidden; }
+	body.is-focused .focus-caption { top: 140px; bottom: auto; width: 43%; }
+	body.is-focused .focus-caption .text-button { max-width: 150px; text-align: left; line-height: 1.7; }
+	body.is-focused .moon-link:not([hidden]) { display: block; }
+	body.is-focused .planet-panel .body-type { display: none; }
+	#worldDialog .planet-stats { display: block; margin: 26px 0; }
+	.loading-notice { padding: 15px; font-size: 10px; white-space: nowrap; }
+	#toast { max-width: calc(100% - 40px); bottom: 222px; text-align: center; }
+	.cinema-signature { top: 22px; left: 24px; }
+	.cinema-signature small { font-size: 6px; margin-left: 14px; letter-spacing: .5px; }
+	#exitCinemaButton { right: 22px; top: 23px; }
+	.cinema-caption { left: 27px; top: 115px; bottom: auto; max-width: 80%; }
+	.cinema-caption h2 { font-size: 51px; }
+	.cinema-caption .eyebrow { font-size: 6px; letter-spacing: 2px; }
+	.cinema-caption > p:last-child { font-size: 11px; }
+	.cinema-dock { bottom: max(29px, env(safe-area-inset-bottom)); padding: 6px; gap: 3px; max-width: calc(100% - 28px); }
+	.cinema-dock .icon-button { width: 32px; }
+	#cinemaDay { padding: 0 9px; font-size: 7px; }
+	#endJourneyButton { padding: 8px; font-size: 8px; }
+}
+@media (max-width: 400px) {
+	.topbar { left: 17px; right: 17px; gap: 9px; }
+	.brand { font-size: 9px; gap: 6px; letter-spacing: 1px; }
+	.brand-icon { width: 23px; }
+	.main-nav .nav-link[data-dialog="guideDialog"] { font-size: 9px; }
+	.view-options > div { gap: 10px; }
+	.option-button { gap: 4px; }
+	.intro { left: 20px; }
+	.intro .eyebrow { letter-spacing: 1.15px; font-size: 5.5px; }
+	h1 { font-size: 36px; }
+	.planet-panel { right: 20px; width: 132px; }
+	.panel-heading .eyebrow { font-size: 5px; }
+	.planet-paging { font-size: 6px; }
+	.planet-panel h2 { font-size: 22px; }
+	.intro-copy { font-size: 9px; }
+	.control-dock { gap: 8px; }
+	.view-segment button { padding: 9px; }
+}
+@media (max-height: 740px) and (min-width: 761px) {
+	.topbar { height: 73px; }
+	.intro { top: 108px; }
+	h1 { font-size: 48px; margin: 13px 0; }
+	.planet-panel { top: 108px; }
+	.planet-description { margin: 12px 0; font-size: 10px; }
+	.planet-stats > div { padding: 7px 0; }
+	.planet-stats { margin-bottom: 13px; }
+	.body-type { margin-bottom: 15px; }
+	.view-options { bottom: 139px; }
+	.control-dock { bottom: 96px; }
+	.planet-nav { bottom: 39px; }
+	.camera-controls { bottom: 130px; }
+	.footer { height: 28px; }
+}
+@media (max-height: 540px) {
+	.topbar { height: 57px; }
+	.intro { top: 78px; }
+	.intro .eyebrow, .intro-copy, .tour-button { display: none; }
+	h1 { font-size: 30px; margin: 0; }
+	.planet-panel { top: 72px; width: 154px; }
+	.planet-description, .planet-stats, .moon-link, .body-type { display: none !important; }
+	.planet-panel h2 { font-size: 22px; margin: 8px 0; }
+	.period .eyebrow { font-size: 5px; }
+	#orbitalPeriod { font-size: 27px; }
+	.focus-button { margin-top: 8px; }
+	.control-dock { bottom: 57px; height: 42px; }
+	.view-segment button { padding: 8px 10px; }
+	.planet-nav { bottom: 5px; padding-bottom: 8px; }
+	.footer, .view-options > .eyebrow { display: none; }
+	.view-options, .camera-controls { bottom: 109px; }
+	.focus-caption { top: 155px; bottom: auto; max-width: 160px; }
+	.focus-caption > p { font-size: 16px; }
+	body.is-focused .intro { visibility: hidden; }
+	body.is-focused .focus-caption { top: 85px; bottom: auto; }
+	.cinema-caption { top: auto; bottom: 100px; left: 30px; }
+	.cinema-caption h2 { font-size: 40px; }
+	.cinema-signature { top: 16px; left: 26px; }
+	#exitCinemaButton { top: 15px; right: 23px; }
+	.cinema-dock { bottom: 20px; }
+	.facts-button { display: block; padding: 7px 0; font-size: 8px; color: #a6b2c1; }
+	#worldDialog .planet-stats { display: block !important; }
+}
+@media (max-height: 800px) {
+	body.is-focused .intro { visibility: hidden; }
+	.planet-panel .planet-description { display: none; }
+	.planet-extras { display: flex; align-items: center; gap: 12px; }
+	.facts-button { display: block; padding: 9px 0; color: #a6b2c1; font-size: 9px; }
+}
+.reduce-motion *, .reduce-motion *::before, .reduce-motion *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+@media (prefers-reduced-motion: reduce) {
+	body:not(.full-motion) *, body:not(.full-motion) *::before, body:not(.full-motion) *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+[dir="rtl"] .intro { left: auto; right: 56px; }
+[dir="rtl"] .planet-panel { right: auto; left: 56px; }
+[dir="rtl"] .focus-caption { left: auto; right: 56px; }
+[dir="rtl"] .view-options { left: auto; right: 46px; }
+[dir="rtl"] .camera-controls { right: auto; left: 16px; }
+[dir="rtl"] .main-nav { margin-left: 0; margin-right: 43px; }
+[dir="rtl"] .session-status { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .body-type { margin-left: 0; margin-right: 16px; }
+[dir="rtl"] #periodUnit { margin-left: 0; margin-right: 9px; }
+[dir="rtl"] .tiny-cross { margin-right: 0; margin-left: 9px; }
+[dir="rtl"] .planet-label { text-align: right; border-left: 0; border-right: 1px solid #b1c4d840; }
+[dir="rtl"] .planet-label.is-selected, [dir="rtl"] .planet-label.is-hovered { border-right-color: var(--planet-color); }
+[dir="rtl"] .exploration-preferences select { float: left; }
+[dir="rtl"] .dialog-close { right: auto; left: 16px; }
+[dir="rtl"] .info-dialog .world-fact { border-left: 0; border-right: 1px solid var(--accent); padding-left: 0; padding-right: 16px; }
+[dir="rtl"] .cinema-signature { left: auto; right: 40px; }
+[dir="rtl"] .cinema-signature small { margin-left: 0; margin-right: 19px; }
+[dir="rtl"] #exitCinemaButton { right: auto; left: 36px; }
+[dir="rtl"] .cinema-caption { left: auto; right: 56px; }
+[dir="rtl"] #endJourneyButton { border-left: 0; border-right: 1px solid var(--line); }
+[dir="rtl"] .tour-progress span { transform-origin: right; }
+[dir="rtl"] :is(.eyebrow, .body-type, h1, h2, .label-name, .session-status, .cinema-caption, .brand-wordmark small) { letter-spacing: 0; }
+[dir="rtl"] h1 { line-height: 1.25; }
+[dir="rtl"] :is(.planet-paging, .focus-button, .tour-button, #backButton, #cinemaPrevious, #cinemaNext) svg { transform: scaleX(-1); }
+[dir="rtl"] :is(.planet-paging, #backButton, #cinemaPrevious) svg.flip { transform: none; }
+[dir="rtl"] .planet-nav { direction: rtl; }
+@media (min-width: 1700px) {
+ [dir="rtl"] .intro, [dir="rtl"] .focus-caption { right: 70px; }
+ [dir="rtl"] .planet-panel { left: 70px; }
+}
+@media (max-width: 1100px) {
+ [dir="rtl"] .intro, [dir="rtl"] .focus-caption { right: 35px; }
+ [dir="rtl"] .planet-panel { left: 35px; }
+ [dir="rtl"] .view-options { right: 30px; }
+ [dir="rtl"] .main-nav { margin-right: 10px; }
+ .topbar { gap: 16px; }
+}
+@media (max-width: 760px) {
+ .topbar { gap: 10px; }
+ .app-actions { gap: 0; }
+ .language-button { min-width: 39px; padding: 0 2px; }
+ .language-button svg { display: none; }
+ .fullscreen-button { display: none; }
+ .main-nav .guide-full { display: none; }
+ .main-nav .guide-short { display: inline; }
+ .intro { max-width: calc(54% - 24px); }
+ h1 { font-size: clamp(27px, 7.8vw, 39px); letter-spacing: -1.3px; }
+ .view-options > div { flex-wrap: wrap; max-width: calc(100vw - 95px); gap: 0 12px; }
+ .planet-extras { flex-wrap: wrap; gap: 0 8px; }
+ .cinema-dock .language-button { min-width: 25px; font-size: 8px; }
+ [dir="rtl"] .intro, [dir="rtl"] .focus-caption { right: 25px; }
+ [dir="rtl"] .planet-panel { left: 24px; }
+ [dir="rtl"] .view-options { right: 24px; }
+ [dir="rtl"] .camera-controls { left: 18px; }
+ [dir="rtl"] .main-nav { margin-left: 0; margin-right: auto; }
+ [dir="rtl"] .cinema-signature { right: 24px; }
+ [dir="rtl"] #exitCinemaButton { left: 22px; }
+ [dir="rtl"] .cinema-caption { right: 27px; }
+ [dir="rtl"] #periodUnit { margin-right: 5px; }
+ [dir="rtl"] h1 { font-size: clamp(26px, 7.5vw, 36px); }
+}
+@media (max-width: 400px) {
+ .topbar { gap: 6px; }
+ .brand { font-size: 8px; letter-spacing: .7px; }
+ .brand-icon { width: 21px; }
+ .language-button { min-width: 30px; }
+ [dir="rtl"] .intro { right: 20px; }
+ [dir="rtl"] .planet-panel { left: 20px; }
+ body.is-touring #cinemaDay { display: none; }
+ .cinema-dock { gap: 1px; }
+ .info-dialog { padding: 30px; }
+}
+@media (max-height: 540px) {
+ [dir="rtl"] .cinema-caption { right: 30px; }
+ [dir="rtl"] .cinema-signature { right: 26px; }
+ [dir="rtl"] #exitCinemaButton { left: 23px; }
+}

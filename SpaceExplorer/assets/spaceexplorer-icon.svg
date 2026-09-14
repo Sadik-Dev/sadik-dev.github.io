@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+	<title id="title">SpaceExplorer icon</title>
+	<desc id="desc">A stylized planet orbiting a bright star on a dark space background.</desc>
+	<defs>
+		<radialGradient id="space" cx="50%" cy="45%" r="70%">
+			<stop offset="0" stop-color="#123047"/>
+			<stop offset="1" stop-color="#030509"/>
+		</radialGradient>
+		<linearGradient id="planet" x1="25%" x2="85%" y1="15%" y2="85%">
+			<stop offset="0" stop-color="#70d4b0"/>
+			<stop offset="0.52" stop-color="#2b87b8"/>
+			<stop offset="1" stop-color="#162a63"/>
+		</linearGradient>
+	</defs>
+	<rect width="512" height="512" rx="112" fill="url(#space)"/>
+	<circle cx="158" cy="150" r="38" fill="#f3c969"/>
+	<circle cx="158" cy="150" r="70" fill="none" stroke="#f3c969" stroke-opacity="0.18" stroke-width="8"/>
+	<path fill="none" stroke="#f5f7fb" stroke-opacity="0.34" stroke-width="18" d="M86 308c88-88 252-142 356-92"/>
+	<path fill="none" stroke="#70d4b0" stroke-opacity="0.72" stroke-width="12" d="M84 331c101-78 243-101 347-45"/>
+	<circle cx="294" cy="304" r="92" fill="url(#planet)"/>
+	<path fill="none" stroke="#dffbed" stroke-opacity="0.38" stroke-width="10" d="M224 278c44 24 96 28 143 7"/>
+	<path fill="none" stroke="#030509" stroke-opacity="0.28" stroke-width="12" d="M218 332c48 29 103 31 154 8"/>
+</svg>

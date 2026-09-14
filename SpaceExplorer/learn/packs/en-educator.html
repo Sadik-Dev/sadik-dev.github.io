@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SpaceExplorer · Educator guide - SpaceExplorer</title>
+	<style>
+	* { box-sizing: border-box; }
+	:root { color-scheme: light; }
+	body { margin: 0; background: #e8ebef; color: #192331; font: 11pt/1.45 Arial, "Segoe UI", Tahoma, sans-serif; }
+	[dir="rtl"] { font-family: Tahoma, Arial, sans-serif; }
+	h1, h2, h3, p { margin: 0 0 3mm; text-wrap: pretty; }
+	h1 { font-size: 22pt; line-height: 1.15; }
+	h2 { font-size: 20pt; line-height: 1.2; }
+	h3 { font-size: 12pt; line-height: 1.3; margin-top: 3mm; }
+	a { color: #174d74; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+	ul, ol { padding-inline-start: 6mm; margin: 2mm 0 4mm; }
+	li { margin-bottom: 2mm; }
+	.toolbar { max-width: 210mm; margin: 16px auto; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; padding: 0 16px; }
+	.toolbar button { border: 0; border-radius: 5px; padding: 12px 18px; background: #192331; color: #fff; font: inherit; cursor: pointer; }
+	.toolbar a { font-weight: bold; }
+	.sheet { width: 210mm; min-height: 297mm; margin: 16px auto; padding: 15mm 17mm; background: #fff; display: flex; flex-direction: column; }
+	.sheet > * { flex-shrink: 0; }
+	.brand { display: flex; justify-content: space-between; gap: 8mm; border-bottom: 0.6mm solid #273d53; padding-bottom: 3mm; margin-bottom: 4mm; font-size: 9pt; }
+	.brand strong { font-size: 12pt; }
+	.brand small { font-size: 9pt; font-weight: normal; margin-inline-start: 2mm; }
+	.eyebrow { color: #435a70; font-size: 9pt; font-weight: bold; margin-bottom: 2mm; }
+	.metadata { display: flex; gap: 3mm 7mm; flex-wrap: wrap; font-size: 9pt; margin: 3mm 0; }
+	.subtitle { color: #435a70; }
+	.objective { border-inline-start: 1mm solid #8094a7; padding-inline-start: 4mm; margin: 3mm 0; }
+	.objective strong { display: block; font-size: 9pt; margin-bottom: 1mm; }
+	.activity { padding: 3mm; border: 0.25mm solid #a9b5c0; border-radius: 2mm; margin: 3mm 0; break-inside: avoid; }
+	.activity h3 { margin-top: 0; }
+	.writing-space { margin: 2mm 0 5mm; }
+	.writing-space div { height: 8mm; border-bottom: 0.2mm solid #9aa7b3; }
+	.questions { list-style: none; padding: 0; counter-reset: question; }
+	.question { counter-increment: question; break-inside: avoid; margin-bottom: 5mm; }
+	.question > h3 { margin-bottom: 3mm; }
+	.question > h3::before { content: counter(question) ". "; color: #435a70; }
+	.options { padding: 0; list-style: none; }
+	.options li { display: flex; align-items: baseline; gap: 3mm; margin: 2mm 0; }
+	.box { display: inline-block; width: 3mm; height: 3mm; border: 0.25mm solid #506273; flex-shrink: 0; }
+	.correct-answer { font-weight: bold; padding-inline-start: 3mm; border-inline-start: 0.7mm solid #647f70; }
+	.note { color: #43505e; font-size: 9pt; }
+	.lesson-link { font-size: 8.5pt; overflow-wrap: anywhere; }
+	.lesson-link a { direction: ltr; unicode-bidi: isolate; }
+	.footer { margin-top: auto; padding-top: 3mm; border-top: 0.2mm solid #bec6cf; font-size: 8pt; }
+	.footer > div { display: flex; justify-content: space-between; gap: 5mm; }
+	.footer p { margin-bottom: 1mm; }
+	.footer a { direction: ltr; unicode-bidi: isolate; overflow-wrap: anywhere; }
+	.pack-intro { margin-bottom: 3mm; }
+	.student .pack-intro h1 { font-size: 18pt; }
+	.student .sheet > p { margin-bottom: 2mm; }
+	.educator .mission-content { font-size: 10pt; line-height: 1.4; }
+	.educator .mission-content h2 { font-size: 18pt; }
+	.educator .mission-content h3 { margin-top: 2mm; font-size: 11pt; }
+	.educator .question { margin-bottom: 2mm; }
+	.educator .mission-content p { margin-bottom: 1.5mm; }
+	@media screen and (max-width: 820px) {
+		.sheet { width: auto; min-height: 0; margin: 16px 8px; padding: 24px 20px; }
+		h1 { font-size: 20pt; }
+		h2 { font-size: 18pt; }
+		.brand { flex-wrap: wrap; gap: 8px; }
+		.footer { margin-top: 16px; }
+	}
+	@page { size: A4; margin: 15mm 17mm; }
+	@media print {
+		body { background: #fff; }
+		.toolbar { display: none; }
+		.sheet { width: auto; min-height: 266mm; margin: 0; padding: 0; break-after: page; }
+		.sheet:last-child { break-after: auto; }
+		a { color: inherit; }
+	}
+</style>
+</head>
+<body class="educator">
+	<nav class="toolbar"><button type="button" onclick="window.print()">Print / save as PDF</button><a href="https://sadik-dev.github.io/SpaceExplorer/learn/?lang=en&amp;view=resources">A small toolkit for shared discoveries</a></nav>
+	<main><section class="sheet"><header class="brand"><span dir="ltr"><strong>SpaceExplorer</strong><small>sadikdev</small></span><span>Educator guide and answers</span></header><div class="pack-intro"><h1>SpaceExplorer · Educator guide</h1><p>Start with a prediction, let learners explore, then ask them to explain their evidence. The worksheets work without the interactive model.</p><div class="metadata"><strong>Ages 8–12</strong><span>About 30 minutes for all three missions</span></div><p class="note">Use explanations and discussion to check understanding. A quiz score alone does not show everything a learner understands.</p></div><h2>Learning goals</h2><ul><li>Tell the difference between turning on an axis and travelling around the Sun.</li><li>Sort the eight planets into three families and use measurements to compare their sizes.</li><li>Explain moonlight, phases and the Moon’s journey around Earth.</li></ul><h3>Before you begin</h3><ul><li>Choose a mission and allow about ten minutes, with more time for discussion if needed.</li><li>Print the student pages or share a lesson link. Keep the educator answers separate. Paper and a pencil are enough for the printed activities.</li></ul><h3>Guide the activity</h3><ul><li>Invite learners to predict before using the model. Read together, pair learners or use read-aloud when a suitable voice is available.</li><li>Ask “What did you notice?” and “What supports your idea?” Explain that sizes and distances in the pictures are simplified.</li></ul><h3>Check understanding</h3><ul><li>Use the three questions to spot ideas to revisit. Discuss the explanations and allow another attempt.</li><li>Ask for a drawing or an explanation in the learner’s own words. Use the reflection question to extend the conversation.</li></ul><p class="note">Diagrams and the 3D view simplify sizes and distances. Compare the numbers in kilometres to check real sizes.</p><footer class="footer"><div><span><bdi>sadikdev</bdi> · Stay curious. Share what you discover.</span><bdi>1 / 4</bdi></div></footer></section><section class="sheet"><header class="brand"><span dir="ltr"><strong>SpaceExplorer</strong><small>sadikdev</small></span><span>Educator guide and answers</span></header><div class="mission-content"><p class="eyebrow">Mission 1 · About 10 min</p><h2>One day, one year</h2><p class="subtitle">Two movements, two clocks</p><div class="objective"><strong>Learning goals</strong>Tell the difference between turning on an axis and travelling around the Sun.</div><h3>Read and discover</h3><p>Earth turns on its axis, an imaginary line through its poles. Your part of Earth moves into sunlight and then away from it. This gives us day and night.</p><p>Earth also travels around the Sun. One complete trip is a year: about 365 Earth days. A day from one noon to the next lasts about 24 hours.</p><p>Mars travels around the Sun too, but its year lasts about 687 Earth days. Turning on an axis is rotation; travelling around another object is an orbit.</p><div class="activity"><h3>Activity: Try the two clocks</h3><p>With the screen: move the time slider to about 365 Earth days, then 687. Compare Earth’s and Mars’s progress around the Sun. Read each planet’s orbital time.</p><p><strong>On paper, draw a turning Earth and its path around the Sun. Which movement explains night? Which planet takes longer to finish one orbit?</strong></p></div><p><strong>Discuss together:</strong> Earth’s rotation explains day and night. Mars needs almost two Earth years to complete one trip around the Sun.</p><h3>Answers</h3><ol class="answer-key questions"><li class="question"><h3>What makes day and night on Earth?</h3><p class="correct-answer">Earth turns on its axis</p><p>As Earth turns, a place moves into sunlight and then out of it. The Sun keeps shining.</p></li><li class="question"><h3>What is one year on a planet?</h3><p class="correct-answer">One complete orbit around the Sun</p><p>A planet’s year is the time it takes to complete one orbit around the Sun.</p></li><li class="question"><h3>Earth’s year is about 365 days; Mars’s is about 687. Which is longer?</h3><p class="correct-answer">Mars’s year</p><p>687 is greater than 365. Mars takes almost twice as long as Earth to orbit the Sun.</p></li></ol><p><strong>One last thought:</strong> If you lived on Mars, would birthdays counted in local years come more or less often? Explain why.</p></div><footer class="footer"><p class="lesson-link">Open the lesson: <a href="https://sadik-dev.github.io/SpaceExplorer/learn/?lang=en&amp;mission=day-year">https://sadik-dev.github.io/SpaceExplorer/learn/?lang=en&amp;mission=day-year</a></p><p>Sources: NASA · Mars facts - <a href="https://science.nasa.gov/mars/facts/">https://science.nasa.gov/mars/facts/</a></p><div><span><bdi>sadikdev</bdi> · Stay curious. Share what you discover.</span><bdi>2 / 4</bdi></div></footer></section><section class="sheet"><header class="brand"><span dir="ltr"><strong>SpaceExplorer</strong><small>sadikdev</small></span><span>Educator guide and answers</span></header><div class="mission-content"><p class="eyebrow">Mission 2 · About 10 min</p><h2>Meet the planet families</h2><p class="subtitle">Rocky worlds and giant neighbours</p><div class="objective"><strong>Learning goals</strong>Sort the eight planets into three families and use measurements to compare their sizes.</div><h3>Read and discover</h3><p>Mercury, Venus, Earth and Mars are rocky planets. They have solid surfaces. These four worlds are the closest planets to the Sun.</p><p>Jupiter and Saturn are gas giants. Uranus and Neptune are ice giants. The giants have deep atmospheres and no solid surface like Earth’s. “Ice giant” does not mean a frozen ball you could stand on.</p><p>Diameter measures across a world through its centre. In our atlas, Earth’s mean diameter is 12,742 km and Jupiter’s is 139,822 km: roughly eleven Earth diameters. Picture sizes alone can mislead you.</p><div class="activity"><h3>Activity: Become a planet sorter</h3><p>With the screen: choose Earth and Jupiter in the comparison. Read their diameters. Then find Uranus and its family.</p><p><strong>Make three headings on paper: rocky, gas giant and ice giant. Put all eight planet names under the right heading. Circle the larger diameter: 12,742 km or 139,822 km.</strong></p></div><p><strong>Discuss together:</strong> There are four rocky planets, two gas giants and two ice giants. Jupiter is much wider than Earth; the measurements show how much.</p><h3>Answers</h3><ol class="answer-key questions"><li class="question"><h3>Which of these is a rocky planet?</h3><p class="correct-answer">Mars</p><p>Mars has a solid rocky surface. Jupiter is a gas giant and Neptune is an ice giant.</p></li><li class="question"><h3>Which pair belongs to the ice giant family?</h3><p class="correct-answer">Uranus and Neptune</p><p>Uranus and Neptune are ice giants. Jupiter and Saturn belong to the gas giant family.</p></li><li class="question"><h3>How can you reliably compare Earth’s and Jupiter’s real sizes here?</h3><p class="correct-answer">Compare their diameters in kilometres</p><p>The diameter numbers describe real sizes. The pictures simplify scale so you can see every world.</p></li></ol><p><strong>One last thought:</strong> Why might a diagram make a small planet look larger than it should? What number could you check?</p></div><footer class="footer"><p class="lesson-link">Open the lesson: <a href="https://sadik-dev.github.io/SpaceExplorer/learn/?lang=en&amp;mission=planet-families">https://sadik-dev.github.io/SpaceExplorer/learn/?lang=en&amp;mission=planet-families</a></p><p>Sources: NASA · The planets - <a href="https://science.nasa.gov/solar-system/planets/">https://science.nasa.gov/solar-system/planets/</a></p><div><span><bdi>sadikdev</bdi> · Stay curious. Share what you discover.</span><bdi>3 / 4</bdi></div></footer></section><section class="sheet"><header class="brand"><span dir="ltr"><strong>SpaceExplorer</strong><small>sadikdev</small></span><span>Educator guide and answers</span></header><div class="mission-content"><p class="eyebrow">Mission 3 · About 10 min</p><h2>Our changing Moon</h2><p class="subtitle">One Moon, many views</p><div class="objective"><strong>Learning goals</strong>Explain moonlight, phases and the Moon’s journey around Earth.</div><h3>Read and discover</h3><p>The Moon shines in our sky by reflecting sunlight. It does not make its own visible light like the Sun. Normally, the Sun lights half of the Moon.</p><p>The Moon orbits Earth while Earth and the Moon travel around the Sun together. From Earth, we see different amounts of the Moon’s sunlit half as it moves. These views are called phases.</p><p>At full Moon, we see the bright half facing us; at new Moon, the bright half faces away. The phase cycle lasts about 29.5 days. Earth’s shadow causes a lunar eclipse, not the regular phases.</p><div class="activity"><h3>Activity: Change your view</h3><p>With the screen: move through the four example phases. Watch how much of the bright part is visible from Earth. The diagram shows a simplified view, not tonight’s Moon.</p><p><strong>Draw a new Moon, a quarter Moon and a full Moon as seen from Earth. Label where the light comes from. Does the Moon itself change shape?</strong></p></div><p><strong>Discuss together:</strong> The Moon stays round. The visible part of its sunlit half changes as the Moon orbits Earth.</p><h3>Answers</h3><ol class="answer-key questions"><li class="question"><h3>Where does moonlight come from?</h3><p class="correct-answer">Sunlight reflected by the Moon</p><p>Sunlight bounces off the Moon’s surface and reaches our eyes.</p></li><li class="question"><h3>Why do we see different Moon phases?</h3><p class="correct-answer">We see different amounts of its sunlit half</p><p>Our view of the sunlit half changes during the Moon’s orbit. Earth’s shadow matters during a lunar eclipse.</p></li><li class="question"><h3>Which path does the Moon follow?</h3><p class="correct-answer">It orbits Earth as both travel around the Sun</p><p>The Moon is Earth’s natural satellite. It travels around Earth, and together they travel around the Sun.</p></li></ol><p><strong>One last thought:</strong> A friend says the Moon becomes a banana shape. How would you explain what really changes?</p></div><footer class="footer"><p class="lesson-link">Open the lesson: <a href="https://sadik-dev.github.io/SpaceExplorer/learn/?lang=en&amp;mission=earth-moon">https://sadik-dev.github.io/SpaceExplorer/learn/?lang=en&amp;mission=earth-moon</a></p><p>Sources: NASA · Moon phases - <a href="https://science.nasa.gov/moon/moon-phases/">https://science.nasa.gov/moon/moon-phases/</a></p><div><span><bdi>sadikdev</bdi> · Stay curious. Share what you discover.</span><bdi>4 / 4</bdi></div></footer></section></main>
+</body>
+</html>
